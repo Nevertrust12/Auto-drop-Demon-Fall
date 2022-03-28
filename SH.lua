@@ -3,7 +3,7 @@
 local Mercury = loadstring(game:HttpGet("https://raw.githubusercontent.com/deeeity/mercury-lib/master/src.lua"))()
 local GUI = Mercury:Create{
     Name = "Sellers HUB",
-    Size = UDim2.fromOffset(500, 400),
+    Size = UDim2.fromOffset(550, 400),
     Theme = Mercury.Themes.Dark,
     Link = "MADE BY NICO"
 }
