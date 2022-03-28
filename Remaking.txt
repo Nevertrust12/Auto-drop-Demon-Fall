@@ -38,7 +38,7 @@ local MyDropdown = Tab:Dropdown{
         "Green Horn",
         "Clay Gourd",
         "Demon Horn",
-        "Iron Ore"
+        "Iron Ore",
         "Crystal Essence",
         "Broken Nichirin",
         "Soup"
