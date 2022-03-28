@@ -20,7 +20,7 @@ Tab:Textbox{
 	Name = "Amount",
 	Description = nil,
 	Callback = function(text)
-	local DropAmount = (text)
+	 _G.DropAmount = (text)
 end
 }
 
@@ -39,7 +39,7 @@ local MyDropdown = Tab:Dropdown{
         "Soup"
 	},
 	Callback = function(item)
-    	local ITEM_NAME = item
+    	_G.ITEM_NAME = item
 return
 end
 }
@@ -48,14 +48,14 @@ Tab:Button{
 	Name = "Start Dropping",
 	Description = 'Once you pressed it will start dropping',
 	Callback = function()
-for i=1, DropAmount do
+for i=1, _G.DropAmount do
 
 wait(1)
 local args = { 
    [1] = "HUD",
    [2] = "Inventory",
    [3] = "Drop",
-   [4] = ITEM_NAME
+   [4] = _G.ITEM_NAME
 }
 
 game:GetService("ReplicatedStorage").Remotes.Sync:InvokeServer(unpack(args))
