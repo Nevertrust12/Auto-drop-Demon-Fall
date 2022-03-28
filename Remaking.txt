@@ -1,5 +1,3 @@
-
-
 local Mercury = loadstring(game:HttpGet("https://raw.githubusercontent.com/deeeity/mercury-lib/master/src.lua"))()
 local GUI = Mercury:Create{
     Name = "Sellers HUB",
@@ -35,6 +33,13 @@ local MyDropdown = Tab:Dropdown{
         "Breath Indict",
         "Combat Potion",
         "Sun Ore",
+        "Crystal Key",
+        "Blue Horn",
+        "Green Horn",
+        "Clay Gourd",
+        "Demon Horn",
+        "Iron Ore"
+        "Crystal Essence",
         "Broken Nichirin",
         "Soup"
 	},
