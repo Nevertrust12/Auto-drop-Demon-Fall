@@ -18,8 +18,8 @@ local Tab = GUI:Tab{
 
 Tab:Textbox{
 	Name = "Amount",
-	Description = nil,
-	Callback = function(text)
+        Description = nil,
+    	Callback = function(text)
 	 _G.DropAmount = (text)
 end
 }
@@ -46,22 +46,14 @@ end
 
 Tab:Button{
 	Name = "Start Dropping",
-	Description = 'Once you pressed it will start dropping',
-	Callback = function()
-for i=1, _G.DropAmount do
-
-wait(1)
-local args = { 
-   [1] = "HUD",
-   [2] = "Inventory",
-   [3] = "Drop",
-   [4] = _G.ITEM_NAME
-}
-
-game:GetService("ReplicatedStorage").Remotes.Sync:InvokeServer(unpack(args))
-
-end
-end
+    	Description = 'Once you pressed it will start dropping',
+        	Callback = function()
+                for i=1, _G.DropAmount do
+                 wait(1)
+            local args = { [1] = "HUD",[2] = "Inventory",[3] = "Drop",[4] = _G.ITEM_NAME}
+          game:GetService("ReplicatedStorage").Remotes.Sync:InvokeServer(unpack(args))
+        end
+    end
 }
 
 Tab:Button{
@@ -109,9 +101,33 @@ end)
 	    end
 }
 
+Tab:Button{
+	Name = "GOD MODE",
+        	Description = "Gives You Infinite Health",
+            	Callback = function()
+        	game:GetService("ReplicatedStorage").Remotes.Async:FireServer("Character", "FallDamageServer", math.acos(50))
+	end
+}
+
+Tab:Button{
+	Name = "Remove God Mode",
+    	Description = "Be careful this will kill you",
+        	Callback = function()
+	        local args = { [1] = "Character", [2] = "FallDamageServer",[3] = 1.e+68 }
+        game:GetService("ReplicatedStorage").Remotes.Async:FireServer(unpack(args))
+    end
+}
+
 GUI:Credit{
 	Name = "Nico",
-	Description = "For Creating the script And GUI.",
-	V3rm = "Unavailable",
+    	Description = "For Creating the script And GUI.",
+    	V3rm = "Unavailable",
 	Discord = "! Sayu Ogiwara.#0776"
+}
+
+GUI:Credit{
+	Name = "CandyLean",
+    	Description = "For creating the god mode script",
+    	V3rm = "",
+	Discord = "CandyLean#2645"
 }
