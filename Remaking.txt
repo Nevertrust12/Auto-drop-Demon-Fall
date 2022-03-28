@@ -109,23 +109,6 @@ end)
 	    end
 }
 
-Tab:Toggle{
-	Name = "Pick Up Aura",
-	StartingState = false,
-	Description = "Auto Collects items near you",
-	Callback = function(state)
-while state do
-    wait()
-local args = {
-    [1] = "Character",
-    [2] = "Interaction",
-    [3] = workspace.DropItem
-}
-        game:GetService("ReplicatedStorage").Remotes.Async:FireServer(unpack(args))
-    end
-end
-}
-
 GUI:Credit{
 	Name = "Nico",
 	Description = "For Creating the script And GUI.",
