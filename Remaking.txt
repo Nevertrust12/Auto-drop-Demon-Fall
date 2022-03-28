@@ -105,6 +105,18 @@ end)
 	    
 	    end
 }
+Tab:Toggle{
+	Name = "Auto Pick Up",
+	StartingState = false,
+	Description = "WARNING! Don't Use this on public otherwise you're gonna get KICKED",
+	Callback = function(state) 
+	while state do
+	local args = {[1] = "Character",[2] = "Interaction",[3] = workspace.DropItem}
+	game:GetService("ReplicatedStorage").Remotes.Async:FireServer(unpack(args))
+	wait(.3)
+end
+	end
+}
 
 Tab:Button{
 	Name = "GOD MODE",
